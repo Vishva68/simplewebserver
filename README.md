@@ -38,12 +38,15 @@ Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 ## PROGRAM:
 
 ```
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+content = '''
 <!doctype html>
 <html>
 <head> <title>my first page</title>
 </head
 <Body>
-<table align="center" border="2" bgcolour="yellow" cellpadding="10">
+<table align="center" border="1" bgcolour="cyan" cellpadding="10">
 <caption>LIST OF PROTOCOLS IN TCP/IP PROTOCOL SUITE</caption>
 <tr><th>s.no</th><th>Name of th Layer</th><th>Name of the protocol</th></tr>
 <tr><th>1</th><th>Application Layer</th><th>HTTPS,FTP,DNS,TELNET ANS SSH</th></tr>
@@ -53,6 +56,21 @@ Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 </table>
 </Body>
 </html>
+'''
+class MyServer(BaseHTTPRequestHandler):
+    def do_GET(self):
+        print("GET request received ... ")
+        self.send_response(200)
+        self.send_header("Content-type", "text/html")
+        self.end_headers()
+        self.wfile.write(content.encode("utf-8"))
+
+print("This is my webserver, running at http://localhost:5000/")
+server_address = ('', 5000)
+httpd = HTTPServer(server_address, MyServer)
+httpd.serve_forever()
+
+
 
 ```
 
