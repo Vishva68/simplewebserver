@@ -37,9 +37,28 @@ Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
 
+```
+<!doctype html>
+<html>
+<head> <title>my first page</title>
+</head
+<Body>
+<table align="center" border="2" bgcolour="yellow" cellpadding="10">
+<caption>LIST OF PROTOCOLS IN TCP/IP PROTOCOL SUITE</caption>
+<tr><th>s.no</th><th>Name of th Layer</th><th>Name of the protocol</th></tr>
+<tr><th>1</th><th>Application Layer</th><th>HTTPS,FTP,DNS,TELNET ANS SSH</th></tr>
+<tr><th>2</th><th>Transport Layer</th><th>TCP/UDP</th></tr>
+<tr><th>3</th><th>Network Layer</th><th>IPV4/IPV6</th></tr>
+<tr><th>4</th><th>Link Layer</th><th>Ethernet</th></tr>
+</table>
+</Body>
+</html>
+
+```
+
 
 ## OUTPUT:
-
+![alt text](image.png)
 
 ## RESULT:
 The program for implementing simple webserver is executed successfully.
